@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Château 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Château 3</h1>
+        <a href="index.html">← Retour à l’accueil</a>
+    </header>
+
+    <main>
+        <section>
+            <img src="images/chateau3.jpg" alt="Château 3">
+            <p>Description du Château 3.</p>
+        </section>
+
+        <section id="qcm">
+            <h2>Testez vos connaissances</h2>
+            <form id="form-qcm3">
+                <p>1. Quelle est la particularité du château ?</p>
+                <label><input type="radio" name="q1" value="A"> Ses jardins</label><br>
+                <label><input type="radio" name="q1" value="B"> Sa chapelle</label><br>
+                <label><input type="radio" name="q1" value="C"> Son donjon</label><br>
+
+                <p>2. En quelle époque a été construit le château ?</p>
+                <label><input type="radio" name="q2" value="A"> Moyen Âge</label><br>
+                <label><input type="radio" name="q2" value="B"> Renaissance</label><br>
+                <label><input type="radio" name="q2" value="C"> Époque moderne</label><br>
+
+                <br>
+                <button type="button" onclick="verifierQCM('form-qcm3', 'resultat3')">Valider</button>
+            </form>
+            <p id="resultat3"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Visite des Châteaux</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
