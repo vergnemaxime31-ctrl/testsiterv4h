@@ -29,3 +29,7 @@ const btnQCM = document.getElementById("btn-qcm");
 btnQCM.addEventListener("click", () => {
     window.location.href = "qcm2.html";
 });
+
+window.addEventListener("beforeunload", () => {
+    localStorage.removeItem("chateau2_access");
+});
