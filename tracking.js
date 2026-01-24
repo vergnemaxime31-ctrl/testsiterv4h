@@ -7,7 +7,7 @@ function getEquipe() {
 function logEvent({ chateau, event, score = "", extra = {} }) {
   const payload = {
     equipe: getEquipe(),
-    timestamp: new Date().toISOString(),
+    timestamp: new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
     chateau,
     event,
     score,

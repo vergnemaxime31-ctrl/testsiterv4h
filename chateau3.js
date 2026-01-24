@@ -1,3 +1,4 @@
+logEvent({ chateau: "chateau3", event: "arrivee_page" });
 const codeChateau3 = "CODE3"; // code réel du château
 
 const btnValider = document.getElementById("valider-code");
