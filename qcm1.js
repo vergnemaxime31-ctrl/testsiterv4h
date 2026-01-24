@@ -25,6 +25,7 @@ btnValiderQCM.addEventListener("click", () => {
 
     localStorage.setItem("chateau1_score", score);
     alert("Votre score : " + score + " / 2\nVous allez être redirigé vers la page d'accueil.");
+    logEvent({ chateau: "chateau1", event: "qcm_valide", score });
     window.location.href = "index.html";
 });
 
