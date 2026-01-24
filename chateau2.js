@@ -13,7 +13,7 @@ contenuChateau.style.display = "none";
 btnValider.addEventListener("click", () => {
     const codeEntre = inputCode.value.trim();
 
-    if (codeEntre === codeChateau1) {
+    if (codeEntre === codeChateau2) {
         message.innerText = "Code correct ! Vous pouvez visiter le château.";
         validationBloc.style.display = "none";
         contenuChateau.style.display = "block";
