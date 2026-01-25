@@ -1,5 +1,11 @@
 logEvent({ chateau: "chateau3", event: "arrivee_page" });
-const codeChateau3 = "CODE3"; // code réel du château
+
+// Codes équipes (test)
+const codesEquipes = {
+  "equipe1": "EQUIPE1",
+  "equipe2": "EQUIPE2",
+  "equipe3": "EQUIPE3"
+};
 
 const btnValider = document.getElementById("valider-code");
 const inputCode = document.getElementById("code-chateau");
@@ -7,24 +13,31 @@ const message = document.getElementById("message-code");
 const contenuChateau = document.getElementById("contenu-chateau");
 const validationBloc = document.getElementById("validation-code");
 
-// 🔒 AU CHARGEMENT : on force toujours la validation
+// Toujours demander le code équipe
 validationBloc.style.display = "block";
 contenuChateau.style.display = "none";
 
 btnValider.addEventListener("click", () => {
-    const codeEntre = inputCode.value.trim();
+  const codeEntre = inputCode.value.trim();
 
-    if (codeEntre === codeChateau3) {
-        message.innerText = "Code correct ! Vous pouvez visiter le château.";
-        validationBloc.style.display = "none";
-        contenuChateau.style.display = "block";
-    } else {
-        message.innerText = "Code incorrect. Essayez à nouveau.";
-    }
+  const equipeTrouvee = Object.keys(codesEquipes).find(
+    (nomEquipe) => codesEquipes[nomEquipe] === codeEntre
+  );
+
+  if (equipeTrouvee) {
+    // On stocke quand même l'équipe (utile pour le QCM après)
+    localStorage.setItem("equipe_nom", equipeTrouvee);
+
+    message.innerText = "Équipe reconnue : " + equipeTrouvee;
+    validationBloc.style.display = "none";
+    contenuChateau.style.display = "block";
+
+    logEvent({ chateau: "chateau3", event: "equipe_identifiee", extra: { equipe: equipeTrouvee } });
+  } else {
+    message.innerText = "Code équipe incorrect. Essayez à nouveau.";
+  }
 });
 
-// === BOUTON ACCÉDER AU QCM ===
-const btnQCM = document.getElementById("btn-qcm");
-btnQCM.addEventListener("click", () => {
-    window.location.href = "qcm3.html";
+document.getElementById("btn-qcm").addEventListener("click", () => {
+  window.location.href = "qcm3.html";
 });
