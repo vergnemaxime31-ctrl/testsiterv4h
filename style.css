@@ -140,3 +140,34 @@ input[type="text"]{
   padding: 20px 10px 28px;
   color: var(--muted);
 }
+
+/* ===== HEADER AVEC LOGOS ===== */
+
+.header-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-logo{
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-title{
+  text-align: center;
+  flex: 1;
+}
+
+.header-title h1{
+  margin: 0;
+  font-size: 26px;
+}
+
+.header-title .subtitle{
+  margin-top: 4px;
+  font-size: 14px;
+  opacity: 0.9;
+}
